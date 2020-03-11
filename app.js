@@ -102,7 +102,7 @@ function list(path) {
 	$.post(path, '{"password":"' + password + '"}', function (data, status) {
 		var obj = jQuery.parseJSON(data);
 		if (typeof obj != 'null' && obj.hasOwnProperty('error') && obj.error.code == '401') {
-			var pass = prompt("Folder terenkripsi，Tolong masukan password", "");
+			var pass = prompt("Folder Encrypted，Please enter password", "");
 			localStorage.setItem('password' + path, pass);
 			if (pass != null && pass != "") {
 				list(path);
